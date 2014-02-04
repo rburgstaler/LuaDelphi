@@ -34,6 +34,8 @@
 ******************************************************************************)
 unit LuaLib;
 
+{$MODE Delphi}
+
 interface
 
 const
@@ -515,11 +517,7 @@ var
 implementation
 
 uses
-  SysUtils, Math,
-{$ifdef MSWINDOWS}
-  Windows
-{$endif}
-;
+  SysUtils, Math {$IFDEF MSWINDOWS}, Windows {$ENDIF};
 
 var
   fLibHandle: Integer = 0;
@@ -571,7 +569,7 @@ begin
      exit;
   end;
 
-  fLibHandle := LoadLibrary(PWideChar( (GetLuaLibFileName() ) ));
+  fLibHandle := LoadLibraryW ( PWideChar(WideString(GetLuaLibFileName())) );
 
   if fLibHandle = 0 then begin
      Result := -2;

@@ -1,5 +1,7 @@
 unit MyLua;
 
+{$MODE Delphi}
+
 {$M+}
 
 interface

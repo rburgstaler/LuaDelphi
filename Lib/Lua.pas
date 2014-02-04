@@ -34,7 +34,26 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 }
 
+{
+
+FPC Version of Lua4.
+
+About license from author,
+
+@nikolai:
+do whatever you want with it – no license required (even for commercial use). It would be nice to get a short note if used in a project. thanks!
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+
+}
+
 unit Lua;
+
+{$MODE Delphi}
 
 interface
 
@@ -210,6 +229,7 @@ end;
 // Register all published methods as Lua Functions
 //
 procedure TLua.AutoRegisterFunctions(Obj: TObject);
+{$IFNDEF FPC}
 type
   PPointer = ^Pointer;
   PMethodRec = ^TMethodRec;
@@ -247,6 +267,34 @@ begin
     end;
   end;
 end;
+{$ELSE}
+(* FPC version of getting Method Tables from Obj *)
+type
+  PMethodNameRec=^TMethodNameRec;
+  TMethodNameRec=packed record
+    Name:PShortString;
+    Addr:Pointer;
+  end;
+  TMethodNameRecs=packed array[0..0] of TMethodNameRec;
+  PMethodNameTable=^TMethodNameTable;
+  TMethodNameTable=packed record
+    Count:LongWord;
+    Entries:TMethodNameRecs;
+  end;
+
+var
+  MethodTable: PMethodNameTable;
+  i:integer;
+begin
+  if Obj=nil then
+     exit;
+  MethodTable:=PMethodNameTable((Pointer(Obj.ClassType)+vmtMethodTable)^);
+  if MethodTable=nil then
+     exit;
+  for i:=0 to MethodTable^.Count-1 do
+    RegisterFunction(MethodTable^.Entries[i].Name^,MethodTable^.Entries[i].Name^,Obj);
+end;
+{$ENDIF}
 
 
 end.

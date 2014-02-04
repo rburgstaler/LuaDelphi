@@ -1,5 +1,7 @@
 unit SomeClass;
 
+{$MODE Delphi}
+
 interface
 
 {$M+}

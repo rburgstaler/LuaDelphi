@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="10">
+      <Unit0>
+        <Filename Value="LuaTest.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="39"/>
+        <CursorPos X="6" Y="13"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="..\Lib\Lua.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Lua"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="58"/>
+        <CursorPos X="17" Y="73"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\Lib\LuaLib.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="LuaLib"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="543"/>
+        <CursorPos X="30" Y="572"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="MyLua.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MyLua"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="2"/>
+        <CursorPos X="1" Y="22"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="SomeClass.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SomeClass"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="C:\development\fpc\rtl\win\wininc\ascdef.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="54"/>
+        <CursorPos X="10" Y="69"/>
+        <UsageCount Value="10"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="helloworld.lua"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="simple.lua"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="C:\development\fpc\rtl\inc\objpash.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="25"/>
+        <CursorPos X="8" Y="40"/>
+        <UsageCount Value="10"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="C:\development\fpc\rtl\objpas\typinfo.pp"/>
+        <UnitName Value="typinfo"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="157"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+      </Unit9>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="9" HistoryIndex="8">
+      <Position1>
+        <Filename Value="LuaTest.lpr"/>
+        <Caret Line="1" Column="1" TopLine="13"/>
+      </Position1>
+      <Position2>
+        <Filename Value="LuaTest.lpr"/>
+        <Caret Line="25" Column="20" TopLine="13"/>
+      </Position2>
+      <Position3>
+        <Filename Value="LuaTest.lpr"/>
+        <Caret Line="47" Column="22" TopLine="34"/>
+      </Position3>
+      <Position4>
+        <Filename Value="LuaTest.lpr"/>
+        <Caret Line="13" Column="7" TopLine="9"/>
+      </Position4>
+      <Position5>
+        <Filename Value="LuaTest.lpr"/>
+        <Caret Line="12" Column="6" TopLine="1"/>
+      </Position5>
+      <Position6>
+        <Filename Value="LuaTest.lpr"/>
+        <Caret Line="33" Column="13" TopLine="22"/>
+      </Position6>
+      <Position7>
+        <Filename Value="LuaTest.lpr"/>
+        <Caret Line="12" Column="5" TopLine="4"/>
+      </Position7>
+      <Position8>
+        <Filename Value="LuaTest.lpr"/>
+        <Caret Line="42" Column="23" TopLine="31"/>
+      </Position8>
+      <Position9>
+        <Filename Value="LuaTest.lpr"/>
+        <Caret Line="13" Column="6" TopLine="1"/>
+      </Position9>
+    </JumpHistory>
+  </ProjectSession>
+  <SkipCheckLCLInterfaces Value="True"/>
+  <EditorMacros Count="0"/>
+</CONFIG>
