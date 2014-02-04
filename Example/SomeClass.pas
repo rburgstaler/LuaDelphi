@@ -1,6 +1,7 @@
 unit SomeClass;
 
 {$MODE Delphi}
+{$i luadefine.inc}
 
 interface
 

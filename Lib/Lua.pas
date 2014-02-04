@@ -36,7 +36,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 {
 
-FPC Version of Lua4.
+FPC Version of Lua.
+
++ implement Lua 5.2
 
 About license from author,
 
@@ -54,15 +56,21 @@ the Free Software Foundation; either version 2 of the License, or
 unit Lua;
 
 {$MODE Delphi}
+{$I luadefine.inc}
 
 interface
 
 uses
   Classes,
-  LuaLib;
+  {$IFNDEF LUA52}
+  LuaLib
+  {$ELSE}
+  lua52
+  {$ENDIF}
+  ;
 
 type
-  TLuaState = Lua_State;
+  TLuaState = {$IFNDEF LUA52} Lua_State {$ELSE} Plua_State {$ENDIF} ;
 
   TLua = class(TObject)
   private
@@ -95,7 +103,7 @@ type
 // @param       Lua_State   L   Pointer to Lua instance
 // @return      Integer         Number of result arguments on stack
 //
-function LuaCallBack(L: Lua_State): Integer; cdecl;
+function LuaCallBack(L: {$IFNDEF LUA52} Lua_State {$ELSE} Plua_State {$ENDIF}): Integer; cdecl;
 var
   CallBack: TCallBack;       // The Object stored in the Object Table
 begin
@@ -120,12 +128,15 @@ end;
 constructor TLua.Create(AutoRegister: Boolean = True);
 begin
   inherited Create;
+  {$IFNDEF LUA52}
   // Load Lua Lib if not already done
   if (not LuaLibLoaded) then
     LoadLuaLib;
-
   // Open Library
   LuaInstance := Lua_Open();
+  {$ELSE}
+  LuaInstance := luaL_newstate;
+  {$ENDIF}
   luaopen_base(LuaInstance);
 
   fAutoRegister := AutoRegister;
@@ -191,15 +202,20 @@ begin
   CallBack.Exec := TProc(CallBack.Routine);
   CallbackList.Add(CallBack);
 
+  (* 5.1
   // prepare Closure value (Method Name)
   lua_pushstring(LuaInstance, PAnsiChar(FuncName));
+  *)
 
   // prepare Closure value (CallBack Object Pointer)
   lua_pushlightuserdata(LuaInstance, CallBack);
 
   // set new Lua function with Closure value
   lua_pushcclosure(LuaInstance, LuaCallBack, 1);
+  (* 5.1
   lua_settable(LuaInstance, LUA_GLOBALSINDEX);
+  *)
+  lua_setglobal(LuaInstance, PAnsiChar(FuncName));
 end;
 
 //

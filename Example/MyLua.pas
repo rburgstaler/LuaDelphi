@@ -1,13 +1,14 @@
 unit MyLua;
 
 {$MODE Delphi}
+{$I luadefine.inc}
 
 {$M+}
 
 interface
 
 uses
-  Lua, LuaLib;
+  Lua, {$IFNDEF LUA52}LuaLib{$ELSE}Lua52{$ENDIF};
 
 type
   // MyLua example class

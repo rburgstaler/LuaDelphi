@@ -1,6 +1,7 @@
 program LuaTest;
 
 {$MODE Delphi}
+{$I luadefine.inc}
 
 {$APPTYPE CONSOLE}
 
@@ -8,7 +9,11 @@ uses
   SysUtils,
   Classes,
   Lua in '..\Lib\Lua.pas',
+  {$IFNDEF LUA52}
   LuaLib in '..\Lib\LuaLib.pas',
+  {$ELSE}
+  lua52 in '..\Lib\Lua52.pas',
+  {$ENDIF}
   MyLua in 'MyLua.pas',
   SomeClass in 'SomeClass.pas';
 
