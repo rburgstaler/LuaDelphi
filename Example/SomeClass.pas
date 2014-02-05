@@ -1,6 +1,8 @@
 unit SomeClass;
 
-{$MODE Delphi}
+{$ifdef FPS}
+  {$MODE Delphi}
+{$endif}
 {$i luadefine.inc}
 
 interface

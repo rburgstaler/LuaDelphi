@@ -1,4 +1,4 @@
-{
+﻿{
 /**
  * @package     Delphi Lua
  * @copyright   Copyright (c) 2009 Dennis D. Spreen (http://www.spreendigital.de/blog)
@@ -54,8 +54,9 @@ the Free Software Foundation; either version 2 of the License, or
 }
 
 unit Lua;
-
-{$MODE Delphi}
+{$ifdef FPS}
+  {$MODE Delphi}
+{$endif}
 {$I luadefine.inc}
 
 interface

@@ -7,8 +7,8 @@ uses
   Lua in '..\Lib\Lua.pas',
   LuaLib in '..\Lib\LuaLib.pas',
   MyLua in 'MyLua.pas',
-  SomeClass in 'SomeClass.pas';
-
+  SomeClass in 'SomeClass.pas',
+  lua52 in '..\Lib\lua52.pas';
 
 var
   MyLua: TLua;

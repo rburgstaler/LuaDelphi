@@ -1,8 +1,9 @@
 unit MyLua;
 
-{$MODE Delphi}
+{$ifdef FPS}
+  {$MODE Delphi}
+{$endif}
 {$I luadefine.inc}
-
 {$M+}
 
 interface

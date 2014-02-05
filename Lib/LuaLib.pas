@@ -34,7 +34,9 @@
 ******************************************************************************)
 unit LuaLib;
 
-{$MODE Delphi}
+{$ifdef FPS}
+  {$MODE Delphi}
+{$endif}
 
 interface
 
